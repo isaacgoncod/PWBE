@@ -1,17 +1,17 @@
 //Importações
 const express = require("express");
 
-//Corpo
-const raiz = (req, res) => {
-  res.send("Back End Ativo!");
-};
-
 //Configuração HTTP
 const app = express();
-app.get("/", raiz);
+
+app.get("/", (req, res) => {
+  res.send("Back End Ativo!");
+});
+
 app.get("/interacao", (req, res) => {
   let nome = req.query.nome;
   let idade = req.query.idade;
+
   res.send(`Olá ${nome}, você tem ${idade} anos`);
 });
 

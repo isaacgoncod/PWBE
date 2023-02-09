@@ -10,13 +10,13 @@ const atualizar = (req, res) => {
     res.send("Atualizar").status(200).end();
 }
 
-const apagar = (req, res) => {
-    res.send("Apagar").status(200).end();
+const deletar = (req, res) => {
+    res.send("Deletar").status(200).end();
 }
 
 module.exports = {
     criar,
     listar,
     atualizar,
-    apagar
+    deletar
 }

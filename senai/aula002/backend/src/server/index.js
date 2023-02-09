@@ -8,5 +8,5 @@ app.use(express.json());
 app.use(router);
 
 app.listen(3000, () => {
-  console.log("Rodando");
+  console.log("respondendo na porta:3000");
 });

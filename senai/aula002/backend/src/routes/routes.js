@@ -8,11 +8,11 @@ const professor = require("../controllers/professor-controller");
 router.get("/alunos", aluno.listar);
 router.post("/aluno", aluno.criar);
 router.put("/aluno", aluno.atualizar);
-router.delete("/aluno", aluno.apagar);
+router.delete("/aluno", aluno.deletar);
 
 router.get("/professores", professor.listar);
 router.post("/professor", professor.criar);
 router.put("/professor", professor.atualizar);
-router.delete("/professor", professor.apagar);
+router.delete("/professor", professor.deletar);
 
 module.exports = router;

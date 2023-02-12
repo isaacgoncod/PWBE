@@ -1,6 +1,7 @@
-import { createPromptModule } from "inquirer";
+const inquirer = require("inquirer");
 
-createPromptModule([
+inquirer
+  .prompt([
     {
       name: "p1",
       message: "Qual a primeira nota?",

@@ -10,7 +10,9 @@ const server = http.createServer((req, res) => {
   res.setHeader("Contenty-Type", "text/html");
 
   if (!name) {
-    res.end("<h1>Preencha o seu nome:</h1>");
+    res.end(
+      "<h1>Preencha o seu nome:</h1><form method='GET'><input type='text' name='name'/><input type='submit' value='Enviar'/><form/>"
+    );
   } else {
     res.end(`<h1>seja bem-vindo ${name}</h1>`);
   }

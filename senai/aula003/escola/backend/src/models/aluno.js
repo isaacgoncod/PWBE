@@ -3,6 +3,7 @@ class Aluno {
     this.ra = ra;
     this.nome = nome;
     this.nascimento = nascimento;
+    this.idade = this.calcIdade();
   }
 
   calcIdade() {

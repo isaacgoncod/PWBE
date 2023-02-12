@@ -8,11 +8,11 @@ inquirer
     },
     {
       name: "p2",
-      message: "Qual a primeira nota?",
+      message: "Qual a segunda nota?",
     },
     {
       name: "p3",
-      message: "Qual a primeira nota?",
+      message: "Qual a terceira nota?",
     },
   ])
   .then((answers) => {

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nome": "Desenvolvimento",
+    "sigla": "2DES"
+  },
+  {
+    "id": 2,
+    "nome": "Eletrônica",
+    "sigla": "EA"
+  }
+]

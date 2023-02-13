@@ -24,6 +24,4 @@ class Aluno {
   }
 }
 
-module.exports = {
-  Aluno,
-};
+module.exports = Aluno;

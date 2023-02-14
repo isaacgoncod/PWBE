@@ -5,7 +5,9 @@ const Alunos = require("../controllers/aluno-controller");
 const Professores = require("../controllers/professor-controller");
 const Turmas = require("../controllers/turma-controller");
 
-router.get("/", Alunos.teste);
+router.get("/", (req, res) => {
+  res.json("API Respondendo.").end();
+});
 
 router.get("/alunos", Alunos.listar);
 router.get("/aluno/:ra", Alunos.buscar);

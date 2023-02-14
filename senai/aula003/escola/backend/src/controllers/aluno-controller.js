@@ -2,10 +2,6 @@ const Aluno = require("../models/aluno");
 
 var alunos = [];
 
-const teste = (req, res) => {
-  res.json("API Respondendo.").end();
-};
-
 const criar = (req, res) => {
   let { nome, nascimento } = req.body;
   let ra = 1;
@@ -87,7 +83,6 @@ const criarVarios = (req, res) => {
 };
 
 module.exports = {
-  teste,
   criar,
   listar,
   buscar,

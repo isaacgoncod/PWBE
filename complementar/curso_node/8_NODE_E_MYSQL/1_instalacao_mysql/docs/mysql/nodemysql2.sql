@@ -1,0 +1,10 @@
+DROP DATABASE IF EXISTS nodemysql2;
+
+CREATE DATABASE nodemysql2 CHARSET=UTF8 COLLATE utf8_general_ci;
+USE nodemysql2;
+
+CREATE TABLE books(
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  page_qty INT NOT NULL
+);

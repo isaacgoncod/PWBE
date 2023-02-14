@@ -37,7 +37,7 @@ app.post("/books/insertbook", (req, res) => {
 const conn = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "MySQL_2002",
+  password: "",
   database: "nodemysql2",
 });
 

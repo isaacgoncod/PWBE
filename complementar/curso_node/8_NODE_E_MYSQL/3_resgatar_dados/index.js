@@ -21,23 +21,40 @@ app.get("/", (req, res) => {
 });
 
 app.post("/books/insertbook", (req, res) => {
-  const { title, pageQty } = req.body;
+  const { title, page_qty } = req.body;
 
-  const sql = `INSERT INTO books (title, page_qty) VALUES ('${title}', '${pageQty}')`;
+  const sql = `INSERT INTO books (title, page_qty) VALUES ('${title}', '${page_qty}')`;
 
   conn.query(sql, function (err) {
     if (err) {
       console.log(err);
+      return;
     }
 
     res.redirect("/");
   });
 });
 
+app.get("/books", (req, res) => {
+  const sql = "SELECT * FROM books";
+
+  conn.query(sql, function (err, data) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    const books = data;
+
+    console.log(books);
+
+    res.render("books", { books });
+  });
+});
+
 const conn = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "MySQL_2002",
+  password: "",
   database: "nodemysql2",
 });
 

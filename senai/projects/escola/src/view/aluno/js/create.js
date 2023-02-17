@@ -1,3 +1,5 @@
+const dados = document.querySelector("#dados");
+
 const options = { method: "GET" };
 
 fetch("http://localhost:3000/alunos", options)

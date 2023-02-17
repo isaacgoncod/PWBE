@@ -7,32 +7,37 @@
     <link rel="stylesheet" href="../../public/css/styles.css" />
     <title>Cadastro de Alunos:</title>
   </head>
-  <body>
-    <form action="http://localhost:3000/create">
-      <div class="form-control">
-        <div>
-          <label for="ra">RA:</label>
-          <input type="text" name="ra" placeholder="Digíte o RA" />
+  <header>
+    <body>
+      <form action="http://localhost:3000/create">
+        <div class="form-control">
+          <div>
+            <label for="ra">RA:</label>
+            <input type="text" name="ra" placeholder="Digíte o RA" />
+          </div>
+          <div>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" placeholder="Digíte o nome" />
+          </div>
+          <div>
+            <label for="nascimento">Nascimento:</label>
+            <input
+              type="date"
+              name="nascimento"
+              placeholder="Digíte a data de nascimento"
+            />
+          </div>
+          <div>
+            <label for="turma">Turma:</label>
+            <input type="number" name="turma" placeholder="Digíte a turma" />
+          </div>
+          <input type="submit" value="Cadastrar" id="btn-create" />
         </div>
-        <div>
-          <label for="nome">Nome:</label>
-          <input type="text" name="nome" placeholder="Digíte o nome" />
-        </div>
-        <div>
-          <label for="nascimento">Nascimento:</label>
-          <input
-            type="date"
-            name="nascimento"
-            placeholder="Digíte a data de nascimento"
-          />
-        </div>
-        <div>
-          <label for="turma">Turma:</label>
-          <input type="number" name="turma" placeholder="Digíte a turma" />
-        </div>
-        <input type="submit" value="Cadastrar" id="btn-create" />
-      </div>
-    </form>
+      </form>
+  </header>
+  <main id="dados">
+    
+  </main>
   </body>
   <script src="./js/create.js"></script>
 </html>

@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.form-control{
+  width: 200px;
+  margin: 20px;
+}
+.form-control div{
+  margin-bottom: 10px;
+}
+.form-control input{
+  width: 200px;
+  height: 1.5rem;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.form-control #btn-create{
+  width: auto;
+  padding: 5px;
+  cursor: pointer;
+}

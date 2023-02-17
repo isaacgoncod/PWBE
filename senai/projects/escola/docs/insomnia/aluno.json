@@ -1,0 +1,18 @@
+[
+  {
+    "ra": 1,
+    "nome": "Isaac",
+    "nascimento": "2002-05-01"
+  },
+  {
+    "ra": 2,
+    "nome": "Gustavo",
+    "nascimento": "2003-10-18"
+  },
+  {
+    "ra": 3,
+    "nome": "Bruno",
+    "nascimento": "1998-04-23"
+  }
+]
+

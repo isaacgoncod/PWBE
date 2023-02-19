@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Cadastro de Alunos:</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <ul>
+          <li><a href="/">Api</a></li>
+        </ul>
+      </nav>
+
+      <form class="form" action="http://localhost:3000/aluno/create">
+        <div class="form-control">
+          <label for="ra">RA:</label>
+          <input type="text" name="ra" placeholder="Digíte o RA" />
+        </div>
+        <div class="form-control">
+          <label for="nome">Nome:</label>
+          <input type="text" name="nome" placeholder="Digíte o nome" />
+        </div>
+        <div class="form-control">
+          <label for="nascimento">Nascimento:</label>
+          <input
+            type="date"
+            name="nascimento"
+            placeholder="Digíte a data de nascimento"
+          />
+        </div>
+        <div class="form-control">
+          <label for="turma">Turma:</label>
+          <input type="number" name="turma" placeholder="Digíte a turma" />
+        </div>
+        <input type="submit" value="Cadastrar" id="btn-create" />
+      </form>
+    </header>
+    <main id="dados"></main>
+  </body>
+  <script src="./js/create.js"></script>
+</html>

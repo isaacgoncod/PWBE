@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS nodemvc;
+
+CREATE DATABASE nodemvc CHARSET=UTF8 COLLATE utf8_general_ci;
+USE nodemvc;

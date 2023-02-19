@@ -1,0 +1,12 @@
+<h1>Alunos:</h1>
+<div>
+  {{#each alunos}}
+    <div>
+      RA:{{this.ra}}
+      - Nome:
+      {{this.nome}}
+      - Nascimento:{{this.nascimento}}
+      - Turma:{{this.id_turma}}
+    </div>
+  {{/each}}
+</div>

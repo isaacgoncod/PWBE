@@ -1,0 +1,34 @@
+<h1>RA: {{aluno.ra}} - Nome: {{aluno.nome}}</h1>
+<form class="form" action="/alunos/update/:ra" method="POST">
+  <input type="hidden" name="ra" value="{{aluno.ra}}" />
+  <div class="form-control">
+    <label for="nome">Nome:</label>
+    <input
+      type="text"
+      name="nome"
+      placeholder="Nome"
+      value="{{aluno.nome}}"
+      required
+    />
+  </div>
+  <div class="form-control">
+    <label for="nascimento">Nascimento:</label>
+    <input type="date" name="nascimento" required />
+
+    <div class="form-control">
+      <label for="id_turma">Turma:</label>
+      <input
+        type="number"
+        name="id_turma"
+        placeholder="Turma"
+        value="{{aluno.id_turma}}"
+        min="1"
+        required
+      />
+    </div>
+  </div>
+  <input type="submit" value="Editar" />
+</form>
+<form class="form" action="/alunos/delete/{{aluno.ra}}" method="POST">
+  <input type="submit" value="remover" />
+</form>

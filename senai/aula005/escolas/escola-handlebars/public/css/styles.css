@@ -43,3 +43,37 @@ h1 {
 .form-control input {
   padding: 5px;
 }
+
+/* ALUNO */
+.aluno-container {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.aluno-container div {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+#aluno-page {
+  padding: 2em;
+}
+
+#aluno-page .container {
+  text-align: center;
+}
+
+.actions {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+.actions a {
+  margin-right: 1rem;
+}

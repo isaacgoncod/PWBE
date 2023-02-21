@@ -1,12 +1,13 @@
-<h1>Alunos:</h1>
-<div>
+<h1>Lista de alunos:</h1>
+<div class="aluno-container">
   {{#each alunos}}
-    <div>
-      RA:{{this.ra}}
-      - Nome:
-      {{this.nome}}
-      - Nascimento:{{this.nascimento}}
-      - Turma:{{this.id_turma}}
+    <div>#{{this.ra}}
+      -
+      <span class="bold"><a href="/alunos/{{this.ra}}">{{this.nome}}</a></span>
+      -
+      {{this.nascimento}}
+      -
+      {{this.id_turma}}
     </div>
   {{/each}}
 </div>

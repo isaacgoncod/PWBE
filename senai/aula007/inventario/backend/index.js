@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const app = express();
 
-const inventarioRoutes = require("./routes/inventarioRoutes");
+const itemRoutes = require("./routes/itemRoutes");
 
 app.use(express.json());
 
@@ -15,6 +15,6 @@ app.use(
   })
 );
 
-app.use("/inventario", inventarioRoutes);
+app.use("/", itemRoutes);
 
 app.listen(3000);

@@ -3,11 +3,9 @@ const cors = require("cors");
 
 const app = express();
 
-const itemRoutes = require("./routes/itemRoutes");
+const bookRoutes = require("./routes/bookRoutes");
 
 app.use(express.json());
-
-app.use(cors());
 
 app.use(
   express.urlencoded({
@@ -15,6 +13,8 @@ app.use(
   })
 );
 
-app.use("/item", itemRoutes);
+app.use(cors());
+
+app.use("/book", bookRoutes);
 
 app.listen(3000);

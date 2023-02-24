@@ -1,57 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>PapelTudo</title>
+    <title>Inventário Papelaria</title>
   </head>
+
   <body>
     <header>
-      <nav id="navbar">
-        <h1>Papelaria PapelTudo</h1>
-        <ul>
-          <li><a href="./items.html">Items</a></li>
-        </ul>
-      </nav>
-      <form class="form" action="http://localhost:3000/item/criar">
-        <div class="form-control">
-          <label for="id">ID:</label>
-          <input type="text" name="id" placeholder="Digíte o ID" required />
-        </div>
-        <div class="form-control">
-          <label for="nome">Nome:</label>
-          <input type="text" name="nome" placeholder="Digíte o nome" required />
-        </div>
-        <div class="form-control">
-          <label for="descricao">Descrição:</label>
-          <input
-            type="text"
-            name="descricao"
-            placeholder="Digíte a descrição"
-            required
-          />
-        </div>
-        <div class="form-control">
-          <label for="valor">Valor:</label>
-          <input
-            type="number"
-            name="valor"
-            placeholder="Digíte o valor"
-            min="1"
-            required
-          />
-        </div>
+      <h1>Inventário - Papelaria PapelTudo</h1>
+      <div class="rotulos">
+        <label for="id">Id</label>
+        <label for="nome">Nome</label>
+        <label for="descricao">Descrição</label>
+        <label for="valor">Valor</label>
+        <label for="acao">Ação</label>
+      </div>
+      <form id="cadastro">
+        <input type="text" name="id" id="id" required />
+        <input type="text" name="nome" id="nome" required />
+        <input type="text" name="descricao" id="descricao" />
+        <input type="number" step="any" name="valor" id="valor" required />
         <input type="submit" value="Cadastrar" />
       </form>
     </header>
-
     <main>
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Id</th>
             <th>Nome</th>
             <th>Descrição</th>
             <th>Valor</th>
@@ -61,10 +40,9 @@
         <tbody id="corpo"></tbody>
       </table>
     </main>
-
     <footer>
       <label for="total">Total:</label>
-      <input type="number" name="total" id="total" readonly />
+      <input type="text" name="total" id="total" readonly />
     </footer>
   </body>
   <script src="./index.js"></script>

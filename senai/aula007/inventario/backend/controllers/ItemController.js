@@ -1,4 +1,4 @@
-const con = require("../db/conn");
+const pool = require("../db/conn");
 const Item = require("../models/Item");
 
 const teste = (req, res) => {
@@ -7,7 +7,8 @@ const teste = (req, res) => {
 
 const criar = (req, res) => {
   let item = new Item(req.body);
-  con.query(item.create(), (err, result) => {
+  
+  pool.query(item.create(), (err, result) => {
     if (err == null) res.status(201).end();
     else res.status(500).json(err).end();
   });
@@ -15,14 +16,16 @@ const criar = (req, res) => {
 
 const listar = (req, res) => {
   let item = new Item(req.params);
-  con.query(item.read(), (err, result) => {
+
+  pool.query(item.read(), (err, result) => {
     if (err == null) res.json(result).end();
   });
 };
 
 const alterar = (req, res) => {
   let item = new Item(req.body);
-  con.query(item.update(), (err, result) => {
+
+  pool.query(item.update(), (err, result) => {
     if (result.affectedRows > 0) res.status(202).end();
     else res.status(404).end();
   });
@@ -30,7 +33,8 @@ const alterar = (req, res) => {
 
 const excluir = (req, res) => {
   let item = new Item(req.params);
-  con.query(item.delete(), (err, result) => {
+
+  pool.query(item.delete(), (err, result) => {
     if (result.affectedRows > 0) res.status(204).end();
     else res.status(404).end();
   });

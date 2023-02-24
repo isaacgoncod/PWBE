@@ -17,3 +17,6 @@ INSERT INTO item VALUES
 ('i004','Longarina','Longarina de três cadeiras',450.00),
 ('i005','Prateleira','Prateleira de vidro',2500.00),
 ('i006','Prateleira','Prateleira de Madeira',1600.00);
+
+-- calculando a soma dos item do banco
+SELECT sum(valor) AS Total FROM item;

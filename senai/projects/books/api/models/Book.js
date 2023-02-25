@@ -4,12 +4,17 @@ class Book {
     this.title = i.title;
     this.author = i.author;
     this.price = i.price;
-    this.dateEmprest = i.dateEmprest;
-    this.datePrevDev = i.datePrevDev;
-    this.dateDevolution = i.dateDevolution;
+    this.date_emprest = i.date_emprest;
+    this.date_prev_dev = i.date_prev_dev;
+    this.date_devolution = i.date_devolution;
   }
+
   create() {
-    return `INSERT INTO book VALUE('${this.id}','${this.title}','${this.author}',${this.price}, '${this.dateEmprest}', '${this.datePrevDev}', '${this.dateDevolution}')`;
+    if (this.date_devolution == undefined) {
+      return `INSERT INTO book VALUE('${this.id}','${this.title}','${this.author}',${this.price}, '${this.date_emprest}', '${this.date_prev_dev}', null)`;
+    } else {
+      return `INSERT INTO book VALUE('${this.id}','${this.title}','${this.author}',${this.price}, '${this.date_emprest}', '${this.date_prev_dev}', '${this.date_devolution}')`;
+    }
   }
 
   read() {
@@ -18,10 +23,16 @@ class Book {
   }
 
   update() {
-    return `UPDATE book SET title = '${this.title}', author = '${this.author}', price = ${this.price}, date_emprest = ${this.dateEmprest}, date_prev_dev = ${this.datePrevDev}, date_devolution = ${this.dateDevolution} WHERE id = '${this.id}'`;
+    if (this.date_devolution == undefined) {
+      return `UPDATE book SET title = '${this.title}', author = '${this.author}', price = ${this.price}, date_emprest = '${this.date_emprest}', date_prev_dev = '${this.date_prev_dev}', date_devolution = null WHERE id = '${this.id}'`;
+    } else {
+      return `UPDATE book SET title = '${this.title}', author = '${this.author}', price = ${this.price}, date_emprest = '${this.date_emprest}', date_prev_dev = '${this.date_prev_dev}', date_devolution = '${this.date_devolution}' WHERE id = '${this.id}'`;
+    }
   }
 
   delete() {
     return `DELETE FROM book WHERE id = '${this.id}'`;
   }
 }
+
+module.exports = Book;

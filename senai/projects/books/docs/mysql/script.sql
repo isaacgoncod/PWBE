@@ -12,7 +12,8 @@ CREATE TABLE
     price FLOAT (5, 2) NOT NULL,
     date_emprest DATE NOT NULL,
     date_prev_dev DATE NOT NULL,
-    date_devolution DATE
+    date_devolution DATE,
+    tax FLOAT (5, 2)
   );
 
 INSERT INTO
@@ -25,6 +26,7 @@ VALUES
     80.55,
     "2023-02-25",
     "2023-03-10",
+    null,
     null
   ),
   (
@@ -34,5 +36,6 @@ VALUES
     90.55,
     "2023-02-25",
     "2023-03-10",
+    null,
     null
   );

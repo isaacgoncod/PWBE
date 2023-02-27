@@ -7,6 +7,7 @@ class Book {
     this.date_emprest = i.date_emprest;
     this.date_prev_dev = i.date_prev_dev;
     this.date_devolution = i.date_devolution;
+    this.tax = this.taxDay();
   }
 
   create() {
@@ -32,6 +33,11 @@ class Book {
 
   delete() {
     return `DELETE FROM book WHERE id = '${this.id}'`;
+  }
+
+  taxDay() {
+    let diferenceDay =
+      this.date_devolution.getTime() - this.date_prev_dev.getTime();
   }
 }
 

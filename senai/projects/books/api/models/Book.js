@@ -7,15 +7,11 @@ class Book {
     this.date_emprest = i.date_emprest;
     this.date_prev_dev = i.date_prev_dev;
     this.date_devolution = i.date_devolution;
-    this.tax = this.taxDay();
+    this.tax_day = this.taxDay();
   }
 
   create() {
-    if (this.date_devolution == undefined) {
-      return `INSERT INTO book VALUE('${this.id}','${this.title}','${this.author}',${this.price}, '${this.date_emprest}', '${this.date_prev_dev}', null)`;
-    } else {
-      return `INSERT INTO book VALUE('${this.id}','${this.title}','${this.author}',${this.price}, '${this.date_emprest}', '${this.date_prev_dev}', '${this.date_devolution}')`;
-    }
+    return `INSERT INTO book VALUE('${this.id}','${this.title}','${this.author}',${this.price}, '${this.date_emprest}', '${this.date_prev_dev}', null, null)`;
   }
 
   read() {
@@ -25,9 +21,9 @@ class Book {
 
   update() {
     if (this.date_devolution == undefined) {
-      return `UPDATE book SET title = '${this.title}', author = '${this.author}', price = ${this.price}, date_emprest = '${this.date_emprest}', date_prev_dev = '${this.date_prev_dev}', date_devolution = null WHERE id = '${this.id}'`;
+      return `UPDATE book SET title = '${this.title}', author = '${this.author}', price = ${this.price}, date_emprest = '${this.date_emprest}', date_prev_dev = '${this.date_prev_dev}', date_devolution = null, tax_day = null WHERE id = '${this.id}'`;
     } else {
-      return `UPDATE book SET title = '${this.title}', author = '${this.author}', price = ${this.price}, date_emprest = '${this.date_emprest}', date_prev_dev = '${this.date_prev_dev}', date_devolution = '${this.date_devolution}' WHERE id = '${this.id}'`;
+      return `UPDATE book SET title = '${this.title}', author = '${this.author}', price = ${this.price}, date_emprest = '${this.date_emprest}', date_prev_dev = '${this.date_prev_dev}', date_devolution = '${this.date_devolution}', tax_day = ${this.tax_day} WHERE id = '${this.id}'`;
     }
   }
 
@@ -36,8 +32,13 @@ class Book {
   }
 
   taxDay() {
-    let diferenceDay =
-      this.date_devolution.getTime() - this.date_prev_dev.getTime();
+    let dateDevolution = new Date(this.date_devolution);
+    let datePrevDev = new Date(this.date_prev_dev);
+
+    let diferenceDay = dateDevolution.getTime() - datePrevDev.getTime();
+    let days = diferenceDay / (1000 * 3600 * 24);
+    
+    return this.price * (days / 100);
   }
 }
 

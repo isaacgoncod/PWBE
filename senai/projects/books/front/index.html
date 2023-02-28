@@ -17,30 +17,30 @@
     <form class="form">
       <div class="form-control">
         <label for="id">ID:</label>
-        <input type="text" name="id" />
+        <input type="text" name="id" autocomplete="on" />
       </div>
       <div class="form-control">
         <label for="title">Título:</label>
-        <input type="text" name="title" />
+        <input type="text" name="title" autocomplete="on" />
       </div>
       <div class="form-control">
         <label for="author">Autor:</label>
-        <input type="text" name="author" />
+        <input type="text" name="author" autocomplete="on" />
       </div>
       <div class="form-control">
         <label for="price">Preço:</label>
-        <input type="number" name="price" />
+        <input type="number" name="price" step="0.01" autocomplete="on" />
       </div>
       <div class="form-control">
         <label for="date_emprest">Data de retirada:</label>
-        <input type="date" name="date_emprest" />
+        <input type="date" name="date_emprest" autocomplete="on" />
       </div>
       <div class="form-control">
         <label for="date_prev_dev">Data prevista para entrega:</label>
-        <input type="date" name="date_prev_dev" />
+        <input type="date" name="date_prev_dev" autocomplete="on" />
       </div>
       <div class="form-control">
-        <label for="date_devolution">Data de devilução:</label>
+        <label for="date_devolution">Data de devolução:</label>
         <input type="date" name="date_devolution" />
       </div>
       <input type="submit" value="Cadastrar" />
@@ -57,6 +57,7 @@
             <th>Data de retirada</th>
             <th>Data de prevista de entrega</th>
             <th>Data de devolução</th>
+            <th>Multa por atraso</th>
           </tr>
         </thead>
         <tbody id="corpo"></tbody>

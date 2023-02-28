@@ -1,5 +1,5 @@
 const uri = "http://localhost:3000/book";
-const cadastro = document.querySelector(".form");
+const form = document.querySelector(".form");
 const corpo = document.querySelector("#corpo");
 
 fetch(uri + "/read", { method: "GET" })
@@ -7,17 +7,17 @@ fetch(uri + "/read", { method: "GET" })
   .then((resp) => montarTabela(resp))
   .catch((err) => console.error(err));
 
-cadastro.addEventListener("submit", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const body = {
-    id: cadastro.id.value,
-    title: cadastro.title.value,
-    author: cadastro.author.value,
-    price: cadastro.price.value,
-    date_emprest: cadastro.date_emprest.value,
-    date_prev_dev: cadastro.date_prev_dev.value,
-    date_devolution: cadastro.date_devolution.value,
+    id: form.id.value,
+    title: form.title.value,
+    author: form.author.value,
+    price: form.price.value,
+    date_emprest: form.date_emprest.value,
+    date_prev_dev: form.date_prev_dev.value,
+    date_devolution: form.date_devolution.value,
   };
 
   const options = {
@@ -46,6 +46,7 @@ function montarTabela(vetor) {
     let col6 = document.createElement("td");
     let col7 = document.createElement("td");
     let col8 = document.createElement("td");
+    let col9 = document.createElement("td");
 
     let del = document.createElement("button");
     del.innerHTML = "[-]";
@@ -55,11 +56,28 @@ function montarTabela(vetor) {
     col2.innerHTML = e.title;
     col3.innerHTML = e.author;
     col4.innerHTML = e.price;
-    col5.innerHTML = e.date_emprest;
-    col6.innerHTML = e.date_prev_dev;
-    col7.innerHTML = e.date_devolution;
+    col5.innerHTML = new Date(e.date_emprest).toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
+    col6.innerHTML = new Date(e.date_prev_dev).toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
 
-    col8.appendChild(del);
+    if (e.date_devolution != undefined) {
+      col7.innerHTML = new Date(e.date_devolution).toLocaleDateString("pt-BR", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "numeric",
+      });
+    }
+
+    col8.innerHTML = e.tax_day;
+
+    col9.appendChild(del);
 
     linha.appendChild(col1);
     linha.appendChild(col2);
@@ -69,6 +87,8 @@ function montarTabela(vetor) {
     linha.appendChild(col6);
     linha.appendChild(col7);
     linha.appendChild(col8);
+
+    linha.appendChild(col9);
 
     corpo.appendChild(linha);
   });

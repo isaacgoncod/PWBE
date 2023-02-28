@@ -13,7 +13,7 @@ CREATE TABLE
     date_emprest DATE NOT NULL,
     date_prev_dev DATE NOT NULL,
     date_devolution DATE,
-    tax FLOAT (5, 2)
+    tax_day FLOAT (5, 2)
   );
 
 INSERT INTO

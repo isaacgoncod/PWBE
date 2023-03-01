@@ -1,0 +1,14 @@
+@import url("./header.css");
+
+main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+table {
+  width: 80%;
+}
+th {
+  width: 150px;
+  border: 1px solid;
+}

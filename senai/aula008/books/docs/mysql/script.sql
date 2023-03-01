@@ -1,12 +1,12 @@
-DROP DATABASE IF EXISTS books;
+DROP DATABASE IF EXISTS biblioteca;
 
-CREATE DATABASE books CHARSET = UTF8 COLLATE utf8_general_ci;
+CREATE DATABASE biblioteca CHARSET = UTF8 COLLATE utf8_general_ci;
 
-USE books;
+USE biblioteca;
 
 CREATE TABLE
-  book (
-    id VARCHAR(45) NOT NULL PRIMARY KEY,
+  livro (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
     author VARCHAR(255) NOT NULL,
     price FLOAT (5, 2) NOT NULL,
@@ -17,25 +17,25 @@ CREATE TABLE
   );
 
 INSERT INTO
-  book
+  livro
 VALUES
   (
-    "b001",
+    DEFAULT,
     "Férias de Veirão",
     "Melissa Próspero",
     80.55,
     "2023-02-25",
     "2023-03-10",
-    null,
-    null
+    DEFAULT,
+    DEFAULT
   ),
   (
-    "b002",
+    DEFAULT,
     "Férias de Inverno",
     "Melissa Próspero",
     90.55,
     "2023-02-25",
     "2023-03-10",
-    null,
-    null
+    DEFAULT,
+    DEFAULT
   );

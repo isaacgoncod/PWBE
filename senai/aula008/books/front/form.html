@@ -4,21 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/form.css" />
     <title>Biblioteca</title>
   </head>
   <body>
     <nav id="navbar">
       <ul>
-        <p><a href="./index.html">Biblioteca</a></p>
-        <li></li>
+        <li><a href="./form.html">Novo</a></li>
+        <li><a href="./books.html">Livros</a></li>
+        <li><a href="./login.html">Login</a></li>
       </ul>
     </nav>
     <form class="form">
-      <div class="form-control">
-        <label for="id">ID:</label>
-        <input type="text" name="id" autocomplete="on" />
-      </div>
       <div class="form-control">
         <label for="title">Título:</label>
         <input type="text" name="title" autocomplete="on" />
@@ -39,30 +36,9 @@
         <label for="date_prev_dev">Data prevista para entrega:</label>
         <input type="date" name="date_prev_dev" autocomplete="on" />
       </div>
-      <div class="form-control">
-        <label for="date_devolution">Data de devolução:</label>
-        <input type="date" name="date_devolution" />
-      </div>
+
       <input type="submit" value="Cadastrar" />
     </form>
-
-    <main>
-      <table>
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Título</th>
-            <th>Autor</th>
-            <th>Preço</th>
-            <th>Data de retirada</th>
-            <th>Data de prevista de entrega</th>
-            <th>Data de devolução</th>
-            <th>Multa por atraso</th>
-          </tr>
-        </thead>
-        <tbody id="corpo"></tbody>
-      </table>
-    </main>
   </body>
-  <script src="./index.js"></script>
+  <script src="./js/form.js"></script>
 </html>

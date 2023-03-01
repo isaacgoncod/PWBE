@@ -1,39 +1,10 @@
 const uri = "http://localhost:3000/book";
-const form = document.querySelector(".form");
 const corpo = document.querySelector("#corpo");
 
 fetch(uri + "/read", { method: "GET" })
   .then((resp) => resp.json())
   .then((resp) => montarTabela(resp))
   .catch((err) => console.error(err));
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const body = {
-    id: form.id.value,
-    title: form.title.value,
-    author: form.author.value,
-    price: form.price.value,
-    date_emprest: form.date_emprest.value,
-    date_prev_dev: form.date_prev_dev.value,
-    date_devolution: form.date_devolution.value,
-  };
-
-  const options = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-  };
-
-  options.body = JSON.stringify(body);
-
-  fetch(uri + "/create", options)
-    .then((resp) => resp.status)
-    .then((resp) => {
-      if (resp == 201) window.location.reload();
-      else alert("Erro ao enviar dados");
-    });
-});
 
 function montarTabela(vetor) {
   vetor.forEach((e) => {
@@ -53,9 +24,12 @@ function montarTabela(vetor) {
     del.setAttribute("onclick", `excluirItem('${e.id}')`);
 
     col1.innerHTML = e.id;
-    col2.innerHTML = e.title;
+    col2.innerHTML = `<a href='./editBook.html'>${e.title}</a>`;
     col3.innerHTML = e.author;
-    col4.innerHTML = e.price;
+    col4.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(e.price);
     col5.innerHTML = new Date(e.date_emprest).toLocaleDateString("pt-BR", {
       day: "2-digit",
       month: "2-digit",
@@ -75,7 +49,10 @@ function montarTabela(vetor) {
       });
     }
 
-    col8.innerHTML = e.tax_day;
+    col8.innerHTML = new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(e.tax_day);;
 
     col9.appendChild(del);
 

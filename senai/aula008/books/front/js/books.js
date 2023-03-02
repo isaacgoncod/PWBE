@@ -26,33 +26,15 @@ function montarTabela(vetor) {
     col1.innerHTML = e.id;
     col2.innerHTML = `<a href='./editBook.html'>${e.title}</a>`;
     col3.innerHTML = e.author;
-    col4.innerHTML = new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(e.price);
-    col5.innerHTML = new Date(e.date_emprest).toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
-    col6.innerHTML = new Date(e.date_prev_dev).toLocaleDateString("pt-BR", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-    });
+    col4.innerHTML = formatarMoeda(e.price);
+    col5.innerHTML = formatarData(e.date_emprest);
+    col6.innerHTML = formatarData(e.date_prev_dev);
 
     if (e.date_devolution != undefined) {
-      col7.innerHTML = new Date(e.date_devolution).toLocaleDateString("pt-BR", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      });
+      col7.innerHTML = formatarData(e.date_devolution);
     }
 
-    col8.innerHTML = new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-    }).format(e.tax_day);;
+    col8.innerHTML = formatarMoeda(e.tax_day);
 
     col9.appendChild(del);
 
@@ -79,4 +61,19 @@ function excluirItem(i) {
         if (resp == 204) window.location.reload();
         else alert("Erro ao enviar dados");
       });
+}
+
+function formatarData(data) {
+  return new Date(data).toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+}
+
+function formatarMoeda(valor) {
+  return new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(valor);
 }

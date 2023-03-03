@@ -26,8 +26,8 @@ VALUES
     80.55,
     "2023-02-25",
     "2023-03-10",
-    DEFAULT,
-    DEFAULT
+    NULL,
+    NULL
   ),
   (
     DEFAULT,
@@ -36,6 +36,6 @@ VALUES
     90.55,
     "2023-02-25",
     "2023-03-10",
-    DEFAULT,
-    DEFAULT
+    NULL,
+    NULL
   );

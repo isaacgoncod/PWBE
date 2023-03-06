@@ -7,8 +7,9 @@ const adicionar = (req, res) => {
 
   pool.query(query, function (err, resp) {
     if (err) {
-      console.log(err);
-      res.status(400).json(err).end();
+      let { sqlMessage, sqlState } = err;
+
+      res.status(400).json({ sqlMessage, sqlState }).end();
     }
 
     res.status(201).json(resp).end();
@@ -27,7 +28,30 @@ const listar = (req, res) => {
     res.status(200).json(resp).end();
   });
 };
+
+const autenticar = (req, res) => {
+  const { matricula, senha } = req.body;
+
+  let query = `SELECT * FROM corretor WHERE matricula = '${matricula}' AND senha = '${senha}'`;
+
+  pool.query(query, function (err, resp) {
+    if (err) {
+      res.status(401).json(err).end();
+    }
+    if (resp.length == 0) {
+      res.status(401).json({ msg: "Matricula ou Senha Inválidos" }).end();
+    }
+
+    let corretor = resp[0];
+
+    delete corretor.senha;
+
+    res.status(200).json(corretor).end();
+  });
+};
+
 module.exports = {
   adicionar,
   listar,
+  autenticar,
 };

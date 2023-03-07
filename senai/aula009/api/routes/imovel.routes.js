@@ -5,6 +5,7 @@ const ImovelController = require("../controllers/imovel.controller");
 
 router.get("/listar", ImovelController.listar);
 router.get("/:info", ImovelController.buscar);
-router.get("/adicionar", ImovelController.adicionar);
+router.post("/adicionar", ImovelController.adicionar);
+router.put("/atualizar", ImovelController.atualizar);
 
 module.exports = router;

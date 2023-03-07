@@ -73,9 +73,39 @@ const atualizar = (req, res) => {
   });
 };
 
+const alterarStatus = (req, res) => {
+  const { codigo, status } = req.params;
+
+  let query = `UPDATE imovel SET status_id = ${status} WHERE codigo = '${codigo}'`;
+
+  pool.query(query, function (err, resp) {
+    if (err) {
+      res.status(404).json(err).end();
+    }
+
+    res.status(202).json(resp).end();
+  });
+};
+
+const deletar = (req, res) => {
+  const { id } = req.params;
+
+  let query = `DELETE FROM imovel WHERE id = ${id}`;
+
+  pool.query(query, function (err, resp) {
+    if (err) {
+      res.status(404).json(err).end();
+    }
+
+    res.status(202).json(resp).end();
+  });
+};
+
 module.exports = {
   listar,
   buscar,
   adicionar,
   atualizar,
+  alterarStatus,
+  deletar,
 };

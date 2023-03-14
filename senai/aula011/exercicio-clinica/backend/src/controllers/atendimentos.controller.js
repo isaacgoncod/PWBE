@@ -1,7 +1,7 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    let data = req.query;
+    const {data} = req.body;
 
     const query = `INSERT INTO atendimentos VALUES (DEFAULT, '${data.data}', ${data.medico_id}, ${data.paciente_id})`;
 
@@ -19,11 +19,11 @@ const cadastrar = (req, res) => {
 };
 
 const listar = (req, res) => {
-    const query = `SELECT * FROM atendimetos`;
+    const query = `SELECT * FROM atendimentos`;
 
     con.query(query, (err, result) => {
         if(err) {
-            req.status(500).json({
+            res.status(500).json({
                 error: "Erro ao listar atendimentos"
             }).end();
         }else {

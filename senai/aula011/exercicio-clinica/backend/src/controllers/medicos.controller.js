@@ -3,7 +3,7 @@ const con = require("../dao/connection");
 const cadastrar = (req, res) => {
     let data = req.body;
 
-    const query = `INSERT INTO medicos VALUES (DEFAULT, '${data.nome}', ${data.especilidade_id})`;
+    const query = `INSERT INTO medicos VALUES (DEFAULT, '${data.nome}', ${data.especialidade_id})`;
 
     con.query(query, (err, result) => {
         if(err) {

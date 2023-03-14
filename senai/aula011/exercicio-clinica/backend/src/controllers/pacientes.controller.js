@@ -1,25 +1,25 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    let data = res.body;
+    const {data} = req.body;
 
-    const query = `INSERT INTO paciente VALUES (DEFAULT, ${data.nome}', '${data.nascimento}')`;
+    const query = `INSERT INTO pacientes VALUES (DEFAULT, '${data.nome}', '${data.data_nascimento}')`;
 
-    con.query(queri, (err, result) => {
+    con.query(query, (err, result) => {
         if(err) {
             res.status(500).json({
                 error: "Erro ao cadastrar paciente"
             }).end();
-        }else {
+        }else { 
             data.id = result.insertId;
             
-            res.status(200).json(info).end();
+            res.status(201).json(data.id).end();
         }
     });
 };
 
 const listar = (req, res) => {
-    const query = `SELECT * FROM paciente`;
+    const query = `SELECT * FROM pacientes`;
 
     con.query(query, (err, result) => {
         if(err) {
@@ -27,7 +27,12 @@ const listar = (req, res) => {
                 error: "Erro ao listar pacientes"
             }).end();
         }else {
-            req.status(200).json(result).end();
+            res.status(200).json(result).end();
         }
     });
 }
+
+module.exports = {
+    cadastrar,
+    listar,
+};

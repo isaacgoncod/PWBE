@@ -13,7 +13,7 @@ const cadastrar = (req, res) => {
         }else {
             data.id = result.insertId;
             
-            res.status(201).json(data.id).end();
+            res.status(201).json({especialidades_id:data.id}).end();
         }
     });
 };

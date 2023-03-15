@@ -5,6 +5,14 @@ CREATE DATABASE clinica;
 USE clinica;
 
 CREATE TABLE
+    user (
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        nome VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        senha VARCHAR(255) NOT NULL
+    );
+
+CREATE TABLE
     especialidades (
         id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(100) NOT NULL
@@ -33,6 +41,16 @@ CREATE TABLE
         paciente_id INT NOT NULL,
         FOREIGN KEY (paciente_id) REFERENCES pacientes (id),
         FOREIGN KEY (medico_id) REFERENCES medicos (id)
+    );
+
+INSERT INTO
+    user
+VALUES
+    (
+        DEFAULT,
+        "Isaac Gonçalves",
+        "isaacgoncod@gmail.com",
+        "admin"
     );
 
 INSERT INTO

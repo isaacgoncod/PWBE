@@ -13,7 +13,7 @@ const cadastrar = (req, res) => {
         }else {
             data.id = result.insertId;
             
-            res.status(201).json(data).end();
+            res.status(201).json({atendimento_id: data.id}).end();
         }
     });
 };

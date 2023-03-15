@@ -1,7 +1,7 @@
 const con = require("../dao/connection");
 
 const cadastrar = (req, res) => {
-    const {data} = req.body;
+    let data = req.body;
 
     const query = `INSERT INTO atendimentos VALUES (DEFAULT, '${data.data}', ${data.medico_id}, ${data.paciente_id})`;
 

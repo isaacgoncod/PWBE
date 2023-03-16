@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', cursive;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  background-image: url(https://fernandezayoradental.com/wp-content/uploads/2015/02/ENTRADA.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+main{
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.cont{
+  width: 50vw;
+  height: 60vh;
+ 
+}
+.teste{
+  width: 100%;
+  height: 100%;
+}
+.paciente, .medico, .especialidade, .atendimento{
+  position: relative;
+  transition: 0.3s;
+}
+img{
+  width: 23vw;
+  height: 300px; 
+}
+.paciente p{
+  position: absolute;
+  top: 15vh;
+  right: 0;
+  font-size: 2em;
+  margin-right: 30px;
+  font-weight: bold;
+}
+.paciente img{
+  transition: 0.3s;
+  filter: blur(2px);
+}
+.paciente:hover{
+  color: white;
+  cursor: pointer;
+}
+.paciente img:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.541);
+  filter:blur()
+}
+.medico p{
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  font-size: 2rem;
+  margin-left: 30px;
+}
+.medico img{
+  transition: 0.3s;
+  filter: blur(2px);
+}
+.medico:hover{
+  color: white;
+  cursor: pointer;
+}
+.medico img:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.541);
+  filter: blur(0px);
+}
+.atendimento p{
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  font-size: 2rem;
+  margin-left: 30px;
+}
+.atendimento img{
+  transition: 0.3s;
+  filter: blur(2px);
+}
+.atendimento:hover{
+  color: white;
+  cursor: pointer;
+}
+.atendimento img:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.541);
+  filter: blur(0px);
+}
+.especialidade p{
+  position: absolute;
+  top: 15vh;
+  right: 0;
+  font-size: 2rem;
+  margin-right: 30px;
+}
+.especialidade img{
+  transition: 0.3s;
+  filter: blur(2px);
+}
+.especialidade:hover{
+  cursor: pointer;
+  color: white;
+}
+.especialidade img:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.541);
+  filter: blur(0px);
+}
+footer{
+  width: 100vw;
+} 

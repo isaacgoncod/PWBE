@@ -1,0 +1,24 @@
+<h1>Criar</h1>
+<form action="/products/create" method="POST">
+  <div class="form-control">
+    <label for="name">Nome do Produto:</label>
+    <input type="text" name="name" placeholder="Dígite o nome do produto" />
+  </div>
+
+  <div class="form-control">
+    <label for="price">Preço do Produto:</label>
+    <input type="text" name="price" placeholder="Dígite o preço do produto" />
+  </div>
+
+  <div class="form-control">
+    <label for="description">Descrição:</label>
+    <textarea
+      name="description"
+      placeholder="Descrição do produto"
+      id=""
+      cols="30"
+      rows="10"
+    ></textarea>
+  </div>
+  <input type="submit" value="cadastrar" class="btn" />
+</form>

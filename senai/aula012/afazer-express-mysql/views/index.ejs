@@ -11,6 +11,28 @@
   <body>
     <h1><%=titulo%></h1>
     <main>
+      <div>
+        <form action="/create" method="post">
+          <label for="descricao">Descrição:</label>
+          <textarea
+            name="descricao"
+            id="descricao"
+            cols="30"
+            rows="10"
+            placeholder="Digíte a descrição da sua tarefa"
+          >
+          </textarea>
+          <label for="quando">Quando:</label>
+          <% hoje = new Date().toISOString().slice(0,16).replace("T", " ") %>
+          <input
+            type="datetime-local"
+            name="quando"
+            id="quando"
+            value="<%=hoje %>"
+          />
+          <input type="submit" value="Novo" />
+        </form>
+      </div>
       <table>
         <thead>
           <tr>

@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
-app.use("/tarefa", tarefaRoutes);
+app.use(tarefaRoutes);
 
 app.use(express.static("public"));
 

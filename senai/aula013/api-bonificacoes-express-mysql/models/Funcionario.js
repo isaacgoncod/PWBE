@@ -10,7 +10,7 @@ class Funcionario {
   }
 
   create() {
-    return `INSERT INTO funcionario VALUE(DEFAULT, "${this.nome_completo}", "${this.data_admissao}",  ${this.salario},  "${this.data_pagto}",  ${this.desempenho}, ${this.bonificacao})`;
+    return `INSERT INTO funcionario VALUE(DEFAULT, "${this.nome_completo}", "${this.data_admissao}",  ${this.salario},  CURDATE(),  ${this.desempenho}, ${this.bonificacao})`;
   }
 
   read() {

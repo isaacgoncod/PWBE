@@ -11,14 +11,14 @@
   <body>
     <h1><%=titulo%></h1>
     <main>
-      <div>
+      <div class="create-control">
         <form action="/create" method="post">
           <label for="descricao">Descrição:</label>
           <textarea
             name="descricao"
             id="descricao"
             cols="30"
-            rows="10"
+            rows="1"
             placeholder="Digíte a descrição da sua tarefa"
           >
           </textarea>
@@ -30,7 +30,7 @@
             id="quando"
             value="<%=hoje %>"
           />
-          <input type="submit" value="Novo" />
+          <button type="submit">Novo</button>
         </form>
       </div>
       <table>
@@ -39,8 +39,6 @@
             <td>Id</td>
             <td>Descrição</td>
             <td>Quando</td>
-            <td>Alterar</td>
-            <td>Excluir</td>
           </tr>
         </thead>
         <tbody>
@@ -52,10 +50,10 @@
               <%=t.quando.toISOString("pt-BR").split("T")[0]%>
               <%=t.quando.toISOString("pt-BR").split("T")[1].slice(0,5)%>
             </td>
-            <td><button>[*]</button></td>
+            <td><button class="btn-table">Alterar</button></td>
             <td>
               <form action="/del/<%=t.id%>?_method=DELETE" method="post">
-                <input type="submit" value="[ - ]" />
+                <input class="btn-table" type="submit" value="Excluir" />
               </form>
             </td>
           </tr>

@@ -9,10 +9,10 @@ CREATE TABLE
     matricula INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome_completo VARCHAR(255) NOT NULL,
     data_admissao DATE NOT NULL,
-    salario FLOAT (6, 2) NOT NULL,
+    salario FLOAT (10, 2) NOT NULL,
     data_pagto DATE NOT NULL,
     desempenho INT NOT NULL,
-    bonificacao FLOAT (6, 2)
+    bonificacao FLOAT (10, 2)
   );
 
 SELECT

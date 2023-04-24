@@ -1,5 +1,3 @@
-const Veiculo = require("./Veiculo");
-
 class Aluguel {
   constructor(id, veiculo, dataRetirada, dataDevolucao) {
     (this.id = id),
@@ -13,7 +11,10 @@ class Aluguel {
     let dataDev = new Date(this.dataDevolucao);
     let dataRet = new Date(this.dataRetirada);
 
-    return dataDev.getDate() - dataRet.getDate();
+    let diferenceDay = dataDev.getTime() - dataRet.getTime();
+    let days = diferenceDay / (1000 * 3600 * 24);
+
+    return days;
   }
 
   getValor() {
@@ -21,11 +22,4 @@ class Aluguel {
   }
 }
 
-const aluguel = new Aluguel(
-  1,
-  new Veiculo("DAY5678", "Marea", "Fiat", 2010, 50.5),
-  "2023-01-20",
-  "2023-01-30"
-);
-
-console.log(aluguel);
+module.exports = Aluguel;

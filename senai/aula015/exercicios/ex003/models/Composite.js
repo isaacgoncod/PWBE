@@ -1,6 +1,6 @@
 const ComponenteAluguel = require("./ComponenteAluguel");
 // Implementação do Composite para a lista de aluguéis
-class CompositeAluguel extends ComponenteAluguel {
+class Composite extends ComponenteAluguel {
   constructor() {
     super();
     this.alugueis = [];
@@ -22,4 +22,4 @@ class CompositeAluguel extends ComponenteAluguel {
   }
 }
 
-module.exports = CompositeAluguel;
+module.exports = Composite;

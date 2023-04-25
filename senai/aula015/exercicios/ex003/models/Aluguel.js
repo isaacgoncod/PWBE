@@ -2,16 +2,14 @@ class Aluguel {
   constructor(id, veiculo, dataRetirada, dataDevolucao) {
     (this.id = id),
       (this.veiculo = veiculo),
-      (this.dataRetirada = dataRetirada),
-      (this.dataDevolucao = dataDevolucao);
+      (this.dataRetirada = new Date(dataRetirada)),
+      (this.dataDevolucao = new Date(dataDevolucao));
     this.valorAluguel = this.getValor();
   }
 
   getDias() {
-    let dataDev = new Date(this.dataDevolucao);
-    let dataRet = new Date(this.dataRetirada);
-
-    let diferenceDay = dataDev.getTime() - dataRet.getTime();
+    let diferenceDay =
+      this.dataDevolucao.getTime() - this.dataRetirada.getTime();
     let days = diferenceDay / (1000 * 3600 * 24);
 
     return days;

@@ -15,14 +15,4 @@ const alugueis = [
   new Aluguel(5, veiculos[0], '2023-04-08', '2023-04-16'),
 ];
 
-veiculos[0].add(alugueis[0]);
-veiculos[0].add(alugueis[4]);
-veiculos[1].add(alugueis[1]);
-veiculos[1].add(alugueis[2]);
-veiculos[2].add(alugueis[3]);
-
-console.log(veiculos[0]);
-console.log(veiculos[1]);
-console.log(veiculos[2]);
-
-veiculos.forEach((veiculo) => console.log(veiculo));
+console.log(alugueis);

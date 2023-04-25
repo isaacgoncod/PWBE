@@ -1,4 +1,4 @@
-const Composite = require("./Composite");
+const Composite = require('./Composite');
 
 // Implementação da classe Veiculo que estende o Composite
 class Veiculo extends Composite {
@@ -13,7 +13,7 @@ class Veiculo extends Composite {
   }
 
   getIdade() {
-    return new Date().getFullYear() - this.ano;
+    return new Date().getFullYear() - Number(this.ano);
   }
 }
 

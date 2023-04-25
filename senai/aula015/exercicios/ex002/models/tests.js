@@ -49,27 +49,4 @@ const vendas = [
   new Parcela(14, compras[3], '2023-07-17', null),
 ];
 
-compras[0].add(vendas[0]);
-compras[0].add(vendas[1]);
-compras[0].add(vendas[2]);
-compras[0].add(vendas[3]);
-
-compras[1].add(vendas[4]);
-compras[1].add(vendas[5]);
-
-compras[2].add(vendas[6]);
-compras[2].add(vendas[7]);
-compras[2].add(vendas[8]);
-
-compras[3].add(vendas[9]);
-compras[3].add(vendas[10]);
-compras[3].add(vendas[11]);
-compras[3].add(vendas[12]);
-compras[3].add(vendas[13]);
-
-// console.log(compras[0]);
-// console.log(compras[1]);
-// console.log(compras[2]);
-// console.log(compras[3]);
-
-compras.forEach((compra) => console.log(compra));
+console.log(vendas);

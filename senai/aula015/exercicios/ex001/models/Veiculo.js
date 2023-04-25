@@ -9,7 +9,7 @@ class Veiculo {
   }
 
   getIdade() {
-    return new Date().getFullYear() - this.ano;
+    return new Date().getFullYear() - Number(this.ano);
   }
 }
 

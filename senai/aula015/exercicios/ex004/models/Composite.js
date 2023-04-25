@@ -1,7 +1,5 @@
-const ComponenteParcela = require("./ComponenteParcela");
-class Composite extends ComponenteParcela {
+class Composite {
   constructor() {
-    super();
     this.parcelas = [];
   }
 
@@ -11,13 +9,6 @@ class Composite extends ComponenteParcela {
 
   remove(id) {
     this.parcelas = this.parcelas.filter((parcela) => parcela.id !== id);
-  }
-
-  getTotalValorParcela() {
-    return this.parcelas.reduce(
-      (total, parcela) => total + parcela.getValor(),
-      0
-    );
   }
 }
 

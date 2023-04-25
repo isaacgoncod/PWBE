@@ -1,10 +1,10 @@
-const Composite = require("./Composite");
+const Composite = require('./Composite');
 
 class Compra extends Composite {
   constructor(id, data, produto, cliente, totalParcelas, preco, quantidade) {
     super(),
       (this.id = id),
-      (this.data = data),
+      (this.data = new Date(data)),
       (this.produto = produto),
       (this.cliente = cliente),
       (this.totalParcelas = totalParcelas),
@@ -14,7 +14,7 @@ class Compra extends Composite {
   }
 
   getTotal() {
-    return this.preco * this.quantidade;
+    return Number((this.preco * this.quantidade).toFixed(2));
   }
 }
 

@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS mycontacts;
+
 CREATE DATABASE mycontacts;
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";

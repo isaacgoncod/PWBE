@@ -6,7 +6,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle[hash].js',
+    filename: 'bundle[fullhash].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -15,8 +15,36 @@ module.exports = {
     new CleanWebpackPlugin(),
   ],
   module: {
-    rules: [{ test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' }],
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, use: 'babel-loader' },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     'style-loader',
+      //     {
+      //       loader: 'css-loader',
+      //       options: {
+      //         modules: true,
+      //       },
+      //     },
+      //   ],
+      // },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+          'sass-loader',
+        ],
+      },
+    ],
   },
+
   devServer: {
     port: 3000,
   },

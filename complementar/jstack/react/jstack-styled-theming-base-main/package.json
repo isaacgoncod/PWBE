@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "style:check": "prettier --check 'src/**/**/*.js'",
+    "style:fix": "prettier --write 'src/**/**/*.js'"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",

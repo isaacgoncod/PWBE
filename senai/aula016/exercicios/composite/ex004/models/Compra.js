@@ -1,6 +1,7 @@
-const Composite = require('./Composite');
+const Composite = require("./Composite");
 
 class Compra extends Composite {
+  
   constructor(id, data, produto, cliente, totalParcelas, preco, quantidade) {
     super(),
       (this.id = id),
